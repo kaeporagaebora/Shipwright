@@ -235,6 +235,7 @@ std::vector<Migration> version3Migrations = {
     { MigrationAction::Rename, "gInstantFishing", "gEnhancements.InstantFishing" },
     { MigrationAction::Rename, "gInstantOcarinaGameWin", "gEnhancements.InstantOcarinaGameWin" },
     { MigrationAction::Rename, "gInstantPutaway", "gEnhancements.InstantPutaway" },
+    { MigrationAction::Rename, "gUnsheatheWithoutSlashing", "gEnhancements.UnsheatheWithoutSlashing" },
     { MigrationAction::Rename, "gInstantShootingGalleryWin", "gEnhancements.InstantShootingGalleryWin" },
     { MigrationAction::Rename, "gIvanCoopModeEnabled", "gEnhancements.IvanCoopModeEnabled" },
     { MigrationAction::Rename, "gLinkDefaultName", "gEnhancements.LinkDefaultName" },

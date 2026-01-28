@@ -2835,8 +2835,11 @@ s32 Player_UpperAction_Sword(Player* this, PlayState* play) {
 s32 Player_UpperAction_ChangeHeldItem(Player* this, PlayState* play) {
     if (LinkAnimation_Update(play, &this->upperSkelAnime) ||
         ((Player_ItemToItemAction(this->heldItemId) == this->heldItemAction) &&
-         (sUseHeldItem =
-              (sUseHeldItem || ((this->modelAnimType != PLAYER_ANIMTYPE_3) && (play->shootingGalleryStatus == 0)))))) {
+         (sUseHeldItem = (sUseHeldItem || ((this->modelAnimType != PLAYER_ANIMTYPE_3) &&
+                                           (!CVarGetInteger(CVAR_ENHANCEMENT("UnsheatheWithoutSlashing"), 0) ||
+                                            (this->heldItemAction != PLAYER_IA_SWORD_KOKIRI) &&
+                                                (this->heldItemAction != PLAYER_IA_SWORD_MASTER)) &&
+                                           (play->shootingGalleryStatus == 0)))))) {
         Player_SetUpperActionFunc(this, sItemActionUpdateFuncs[this->heldItemAction]);
         this->unk_834 = 0;
         this->idleType = PLAYER_IDLE_DEFAULT;

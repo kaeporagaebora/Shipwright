@@ -300,6 +300,9 @@ void SohMenu::AddMenuEnhancements() {
     AddWidget(path, "Instant Putaway", WIDGET_CVAR_CHECKBOX)
         .CVar(CVAR_ENHANCEMENT("InstantPutaway"))
         .Options(CheckboxOptions().Tooltip("Allow Link to put items away without having to wait around."));
+    AddWidget(path, "Unsheathe Sword Without Slashing", WIDGET_CVAR_CHECKBOX)
+        .CVar(CVAR_ENHANCEMENT("UnsheatheWithoutSlashing"))
+        .Options(CheckboxOptions().Tooltip("Allow Link to unsheathe sword without automatically slashing."));
     AddWidget(path, "Navi Timer Resets on Scene Change", WIDGET_CVAR_CHECKBOX)
         .CVar(CVAR_ENHANCEMENT("ResetNaviTimer"))
         .Options(
